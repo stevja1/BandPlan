@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence	xmlns="http://java.sun.com/xml/ns/persistence"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0"
+				xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="BandPlanTestPU" transaction-type="RESOURCE_LOCAL">
+		<description>BandPlan Persistent Unit</description>
+		<provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
+		<class>org.jaredstevens.servers.db.entities.Repeater</class>
+		<properties>
+			<property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema"/>
+			<property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=INFO, Tool=INFO, SQL=TRACE"/>
+			<property name="openjpa.Log" value="none" />
+		<!--
+			<property name="openjpa.TransactionMode" value="managed" />
+			<property name="openjpa.ConnectionFactoryMode" value="managed" />
+			<property name="jta.UserTransaction" value="java:comp/UserTransaction" />
+		-->
+			<property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/bandplan"/>
+			<property name="openjpa.ConnectionDriverName" value="com.mysql.jdbc.Driver"/>
+			<property name="openjpa.ConnectionUserName" value="bandplan"/>
+			<property name="openjpa.ConnectionPassword" value="bandpl4n"/>	
+
+
+		<!--
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.CMTTransactionFactory" />
+			<property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.CMTTransactionFactory" />
+		-->
+		</properties>
+	</persistence-unit>
+</persistence>
